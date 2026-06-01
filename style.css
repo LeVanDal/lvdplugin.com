@@ -428,9 +428,9 @@ ul, ol {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.15;
   margin-bottom: 24px;
   animation: fadeInUp 1s ease-out 0.3s both;
 }
