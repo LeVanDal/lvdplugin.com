@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LVD Plugin AutoCAD - Giải pháp toàn diện cho kỹ sư thi công</title>
+  <meta name="description" content="LVD Plugin AutoCAD - Bộ công cụ hỗ trợ thi công xây dựng chuyên nghiệp trên AutoCAD với 31+ lệnh tự động hóa: giáo chống, ván khuôn, thép sàn, bóc tách khối lượng." />
+  <meta name="keywords" content="AutoCAD plugin, thi công xây dựng, giáo chống, ván khuôn, thép sàn, bóc tách khối lượng, LVD Plugin" />
+  <meta name="author" content="Lê Văn Đại" />
+  <link rel="icon" type="image/x-icon" href="images/logo.ico" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon"><img src="images/logo-nav.png" alt="LVD" /></div>
+        <span class="nav-logo-text" data-vi="LVD AutoCAD Tools" data-en="LVD AutoCAD Tools">LVD AutoCAD Tools</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#features" data-vi="Tính năng" data-en="Features">Tính năng</a>
+        <a href="#commands" data-vi="Bảng lệnh" data-en="Commands">Bảng lệnh</a>
+        <a href="#gallery" data-vi="Hình ảnh" data-en="Gallery">Hình ảnh</a>
+        <a href="#pricing" data-vi="Báo giá" data-en="Pricing">Báo giá</a>
+        <a href="#compatibility" data-vi="Tương thích" data-en="Compatibility">Tương thích</a>
+        <a href="#faq" data-vi="FAQ" data-en="FAQ">FAQ</a>
+        <a href="#custom-service" data-vi="Dịch vụ" data-en="Services">Dịch vụ</a>
+        <div class="lang-switch">
+          <button class="lang-btn active" id="langVi" onclick="switchLang('vi')">VI</button>
+          <button class="lang-btn" id="langEn" onclick="switchLang('en')">EN</button>
+        </div>
+        <a href="#pricing" class="nav-cta" data-vi="Tải ngay" data-en="Download">Tải ngay</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO SECTION
+       ============================================ -->
+  <section class="hero section" id="hero">
+    <canvas id="particles-canvas"></canvas>
+
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="pulse-dot"></span>
+          <span data-vi="Phiên bản 1.0.5.4 — Mới nhất" data-en="Version 1.0.5.4 — Latest">Phiên bản 1.0.5.4 — Mới nhất</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span data-vi="Giải pháp" data-en="The Ultimate">Giải pháp</span><br />
+          <span class="gradient-text" data-vi="Toàn diện" data-en="Complete Solution">Toàn diện</span><br />
+          <span data-vi="cho Kỹ sư Thi công" data-en="for Construction Engineers">cho Kỹ sư Thi công</span>
+        </h1>
+
+        <p class="hero-description" data-vi="Tự động hóa triển khai giáo chống, ván khuôn, thép sàn, bóc tách khối lượng trực tiếp trên AutoCAD. Tiết kiệm hàng giờ làm việc mỗi ngày." data-en="Automate scaffolding deployment, formwork, slab rebar, quantity surveying directly in AutoCAD. Save hours of work every day.">
+          Tự động hóa triển khai giáo chống, ván khuôn, thép sàn, bóc tách khối lượng trực tiếp trên AutoCAD. Tiết kiệm hàng giờ làm việc mỗi ngày.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#pricing" class="btn btn-primary">
+            <span>⬇</span>
+            <span data-vi="Tải về ngay" data-en="Download Now">Tải về ngay</span>
+          </a>
+          <a href="#features" class="btn btn-secondary">
+            <span>▶</span>
+            <span data-vi="Xem tính năng" data-en="View Features">Xem tính năng</span>
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="stat-number" data-count="31">0</div>
+            <div class="stat-label" data-vi="Lệnh AutoCAD" data-en="AutoCAD Commands">Lệnh AutoCAD</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number" data-count="7">0</div>
+            <div class="stat-label" data-vi="Nhóm tính năng" data-en="Feature Groups">Nhóm tính năng</div>
+          </div>
+          <div class="hero-stat">
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-label" data-vi="Phiên bản CAD" data-en="CAD Versions">Phiên bản CAD</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-logo">
+          <img src="images/logo-hero.png" alt="LVD AutoCAD Tools Logo" />
+        </div>
+
+        <div class="hero-visual-card">
+          <div class="floating-badge badge-top">
+            <span>🏗️</span>
+            <span data-vi="Hỗ trợ Ringlock, Nêm, H-Frame" data-en="Ringlock, Wedge, H-Frame">Hỗ trợ Ringlock, Nêm, H-Frame</span>
+          </div>
+
+          <div class="hero-terminal">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">AutoCAD Command Line</span>
+            </div>
+            <div class="terminal-body">
+              <div class="terminal-line">
+                <span class="terminal-prompt">Command:</span>
+                <span class="terminal-cmd">RGS_LVD</span>
+              </div>
+              <div class="terminal-output terminal-success">✓ Rải giáo sàn Ringlock thành công</div>
+              <div class="terminal-output">  → 48 cột giáo | 96 giằng ngang | 24 giằng chéo</div>
+              <br>
+              <div class="terminal-line">
+                <span class="terminal-prompt">Command:</span>
+                <span class="terminal-cmd">VCF_LVD</span>
+              </div>
+              <div class="terminal-output terminal-success">✓ Vẽ mặt cắt ván khuôn hoàn tất</div>
+              <div class="terminal-output">  → Dầm 300x600 | H tầng: 3.3m | Jack: 450mm</div>
+              <br>
+              <div class="terminal-line">
+                <span class="terminal-prompt">Command:</span>
+                <span class="terminal-cmd">LVD_VETHepSan</span>
+              </div>
+              <div class="terminal-output terminal-success">✓ Vẽ thép sàn hoàn tất</div>
+              <div class="terminal-output">  → 156 thanh d10a200 | 6 nhóm | XData OK</div>
+              <br>
+              <div class="terminal-line">
+                <span class="terminal-prompt">Command:</span>
+                <span class="terminal-cmd terminal-highlight">QS_XUATEXCEL_LVD</span>
+              </div>
+              <div class="terminal-output terminal-success">✓ Xuất Excel khối lượng thành công ▸</div>
+            </div>
+          </div>
+
+          <div class="floating-badge badge-bottom">
+            <span>📊</span>
+            <span data-vi="Xuất Excel tự động" data-en="Auto Excel Export">Xuất Excel tự động</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FEATURES SECTION
+       ============================================ -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>⚡</span>
+          <span data-vi="Tính năng" data-en="Features">Tính năng</span>
+        </span>
+        <h2 class="section-title" data-vi="7 nhóm công cụ mạnh mẽ" data-en="7 Powerful Tool Groups">7 nhóm công cụ mạnh mẽ</h2>
+        <p class="section-subtitle" data-vi="Tất cả những gì kỹ sư thi công cần trong một plugin duy nhất. Từ giáo chống đến thép sàn, từ bóc tách đến shop drawing." data-en="Everything a construction engineer needs in one plugin. From scaffolding to rebar, from quantity surveying to shop drawings.">Tất cả những gì kỹ sư thi công cần trong một plugin duy nhất. Từ giáo chống đến thép sàn, từ bóc tách đến shop drawing.</p>
+      </div>
+
+      <div class="features-grid stagger-children reveal">
+        <!-- Feature 1: Ốp Lát -->
+        <div class="feature-card" data-accent="blue" id="feature-tiling">
+          <div class="feature-icon">🧱</div>
+          <h3>
+            <span data-vi="Ốp Lát" data-en="Tiling">Ốp Lát</span>
+            <span class="feature-count" data-vi="6 lệnh" data-en="6 cmds">6 lệnh</span>
+          </h3>
+          <p data-vi="Tạo pattern gạch tự động, chia gạch trong boundary, dim gạch, thống kê số lượng gạch và xuất BOM." data-en="Auto tile pattern creation, subdivision within boundaries, tile dimensioning, quantity statistics and BOM export.">Tạo pattern gạch tự động, chia gạch trong boundary, dim gạch, thống kê số lượng gạch và xuất BOM.</p>
+        </div>
+
+        <!-- Feature 2: QS -->
+        <div class="feature-card" data-accent="emerald" id="feature-qs">
+          <div class="feature-icon">📐</div>
+          <h3>
+            <span data-vi="Bóc tách Khối lượng" data-en="Quantity Surveying">Bóc tách Khối lượng</span>
+            <span class="feature-count" data-vi="5 lệnh" data-en="5 cmds">5 lệnh</span>
+          </h3>
+          <p data-vi="Đo polyline, diện tích tự động. Xuất trực tiếp ra Excel hoặc bảng CAD. Hỗ trợ đo lường chính xác." data-en="Auto polyline and area measurement. Direct export to Excel or CAD table. Accurate measurement support.">Đo polyline, diện tích tự động. Xuất trực tiếp ra Excel hoặc bảng CAD. Hỗ trợ đo lường chính xác.</p>
+        </div>
+
+        <!-- Feature 3: Giáo chống -->
+        <div class="feature-card" data-accent="orange" id="feature-scaffolding">
+          <div class="feature-icon">🏗️</div>
+          <h3>
+            <span data-vi="Giáo chống" data-en="Scaffolding">Giáo chống</span>
+            <span class="feature-count" data-vi="6 lệnh" data-en="6 cmds">6 lệnh</span>
+          </h3>
+          <p data-vi="Rải giáo tự động cho dầm giữa, dầm biên, sàn. Hỗ trợ 3 hệ giáo: Ringlock, Nêm và H-Frame. Tối ưu chiều cao tự động." data-en="Auto scaffolding distribution for beams and slabs. Supports 3 systems: Ringlock, Wedge, H-Frame. Auto height optimization.">Rải giáo tự động cho dầm giữa, dầm biên, sàn. Hỗ trợ 3 hệ giáo: Ringlock, Nêm và H-Frame. Tối ưu chiều cao tự động.</p>
+        </div>
+
+        <!-- Feature 4: Xà gồ -->
+        <div class="feature-card" data-accent="cyan" id="feature-purlins">
+          <div class="feature-icon">📏</div>
+          <h3>
+            <span data-vi="Xà gồ" data-en="Purlins">Xà gồ</span>
+            <span class="feature-count" data-vi="4 lệnh" data-en="4 cmds">4 lệnh</span>
+          </h3>
+          <p data-vi="Rải xà gồ 50×100 và 50×50 tự động vuông góc với tim dầm hoặc trong boundary sàn." data-en="Auto 50×100 and 50×50 purlin distribution perpendicular to beam centerlines or within slab boundaries.">Rải xà gồ 50×100 và 50×50 tự động vuông góc với tim dầm hoặc trong boundary sàn.</p>
+        </div>
+
+        <!-- Feature 5: Tiện ích -->
+        <div class="feature-card" data-accent="purple" id="feature-utilities">
+          <div class="feature-icon">🔧</div>
+          <h3>
+            <span data-vi="Tiện ích" data-en="Utilities">Tiện ích</span>
+            <span class="feature-count" data-vi="8 lệnh" data-en="8 cmds">8 lệnh</span>
+          </h3>
+          <p data-vi="Tạo boundary, tìm tim dầm ảo thông minh (CBL), thống kê block, layout ván khuôn ply tự động, vẽ mặt cắt ván khuôn chi tiết." data-en="Boundary creation, intelligent virtual beam centerline (CBL), block statistics, auto plywood layout, detailed formwork cross-section.">Tạo boundary, tìm tim dầm ảo thông minh (CBL), thống kê block, layout ván khuôn ply tự động, vẽ mặt cắt ván khuôn chi tiết.</p>
+        </div>
+
+        <!-- Feature 6: Thép sàn -->
+        <div class="feature-card" data-accent="rose" id="feature-rebar">
+          <div class="feature-icon">⚙️</div>
+          <h3>
+            <span data-vi="Thép sàn" data-en="Slab Rebar">Thép sàn</span>
+            <span class="feature-count" data-vi="4 lệnh" data-en="4 cmds">4 lệnh</span>
+          </h3>
+          <p data-vi="Vẽ thép sàn tự động/thủ công với 6 kiểu móc. Thống kê thép, xuất Excel với hình dạng, tạo shop drawing tự động." data-en="Auto/manual slab rebar drawing with 6 hook types. Rebar statistics, Excel export with shapes, auto shop drawing.">Vẽ thép sàn tự động/thủ công với 6 kiểu móc. Thống kê thép, xuất Excel với hình dạng, tạo shop drawing tự động.</p>
+        </div>
+
+        <!-- Feature 7: Thép tăng cường -->
+        <div class="feature-card" data-accent="amber" id="feature-reinforcement">
+          <div class="feature-icon">🔩</div>
+          <h3>
+            <span data-vi="Thép tăng cường" data-en="Reinforcement">Thép tăng cường</span>
+            <span class="feature-count" data-vi="1 lệnh" data-en="1 cmd">1 lệnh</span>
+          </h3>
+          <p data-vi="Rải thép tăng cường hàng loạt. Tự động nhận diện mẫu, phân tích text thiết kế (d10a150), phân phối thép và tạo annotation." data-en="Batch reinforcement rebar distribution. Auto sample recognition, design text parsing (d10a150), rebar distribution and annotation.">Rải thép tăng cường hàng loạt. Tự động nhận diện mẫu, phân tích text thiết kế (d10a150), phân phối thép và tạo annotation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMMAND REFERENCE SECTION
+       ============================================ -->
+  <section class="commands section" id="commands">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>💻</span>
+          <span data-vi="Bảng lệnh" data-en="Commands">Bảng lệnh</span>
+        </span>
+        <h2 class="section-title" data-vi="31+ lệnh chuyên nghiệp" data-en="31+ Professional Commands">31+ lệnh chuyên nghiệp</h2>
+        <p class="section-subtitle" data-vi="Mỗi lệnh được tối ưu cho quy trình thi công thực tế, giúp bạn hoàn thành công việc nhanh gấp nhiều lần." data-en="Each command optimized for real construction workflows, helping you finish work many times faster.">Mỗi lệnh được tối ưu cho quy trình thi công thực tế, giúp bạn hoàn thành công việc nhanh gấp nhiều lần.</p>
+      </div>
+
+      <div class="commands-tabs reveal" id="commandTabs">
+        <button class="cmd-tab active" data-filter="all" data-vi="Tất cả" data-en="All">Tất cả</button>
+        <button class="cmd-tab" data-filter="tiling" data-vi="Ốp Lát" data-en="Tiling">Ốp Lát</button>
+        <button class="cmd-tab" data-filter="qs" data-vi="Bóc tách KL" data-en="QS">Bóc tách KL</button>
+        <button class="cmd-tab" data-filter="scaffolding" data-vi="Giáo chống" data-en="Scaffolding">Giáo chống</button>
+        <button class="cmd-tab" data-filter="purlins" data-vi="Xà gồ" data-en="Purlins">Xà gồ</button>
+        <button class="cmd-tab" data-filter="utilities" data-vi="Tiện ích" data-en="Utilities">Tiện ích</button>
+        <button class="cmd-tab" data-filter="rebar" data-vi="Thép sàn" data-en="Rebar">Thép sàn</button>
+        <button class="cmd-tab" data-filter="reinforcement" data-vi="Thép TC" data-en="Reinforcement">Thép TC</button>
+      </div>
+
+      <div class="commands-table-wrapper reveal">
+        <table class="commands-table" id="commandsTable">
+          <thead>
+            <tr>
+              <th data-vi="Lệnh" data-en="Command">Lệnh</th>
+              <th data-vi="Mô tả" data-en="Description">Mô tả</th>
+              <th data-vi="Nhóm" data-en="Group">Nhóm</th>
+            </tr>
+          </thead>
+          <tbody id="commandsBody">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GALLERY SECTION
+       ============================================ -->
+  <section class="gallery section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>🖼️</span>
+          <span data-vi="Hình ảnh minh họa" data-en="Gallery">Hình ảnh minh họa</span>
+        </span>
+        <h2 class="section-title" data-vi="Xem kết quả thực tế" data-en="See Real Results">Xem kết quả thực tế</h2>
+        <p class="section-subtitle" data-vi="Các bản vẽ được tạo tự động bởi LVD Plugin trực tiếp trên AutoCAD." data-en="Drawings automatically generated by LVD Plugin directly in AutoCAD.">Các bản vẽ được tạo tự động bởi LVD Plugin trực tiếp trên AutoCAD.</p>
+      </div>
+
+      <div class="gallery-grid stagger-children reveal">
+        <div class="gallery-card">
+          <img src="images/mccfdam.png" alt="Mặt cắt ván khuôn dầm" loading="lazy" />
+          <div class="gallery-info">
+            <h4 data-vi="Mặt cắt ván khuôn dầm" data-en="Beam Formwork Cross-Section">Mặt cắt ván khuôn dầm</h4>
+            <p data-vi="Tự động vẽ mặt cắt ván khuôn dầm với giáo chống, xà gồ, ply và bê tông." data-en="Auto-generated beam formwork section with scaffolding, purlins, plywood and concrete.">Tự động vẽ mặt cắt ván khuôn dầm với giáo chống, xà gồ, ply và bê tông.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/mccfsan.png" alt="Mặt cắt ván khuôn sàn" loading="lazy" />
+          <div class="gallery-info">
+            <h4 data-vi="Mặt cắt ván khuôn sàn" data-en="Slab Formwork Cross-Section">Mặt cắt ván khuôn sàn</h4>
+            <p data-vi="Mặt cắt sàn chi tiết với 2 lớp xà gồ, hệ giáo chống và kích thước tự động." data-en="Detailed slab section with 2-layer purlins, scaffolding system and auto dimensions.">Mặt cắt sàn chi tiết với 2 lớp xà gồ, hệ giáo chống và kích thước tự động.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Raigiao.png" alt="Rải giáo dầm" loading="lazy" />
+          <div class="gallery-info">
+            <h4 data-vi="Mặt bằng rải giáo dầm" data-en="Beam Scaffolding Layout">Mặt bằng rải giáo dầm</h4>
+            <p data-vi="Bố trí giáo chống Ringlock cho dầm BTCT với giằng dọc, giằng ngang và đĩa liên kết." data-en="Ringlock scaffolding layout for RC beam with longitudinal & transverse bracing and connectors.">Bố trí giáo chống Ringlock cho dầm BTCT với giằng dọc, giằng ngang và đĩa liên kết.</p>
+          </div>
+        </div>
+
+        <div class="gallery-card">
+          <img src="images/Raigiaosan.png" alt="Rải giáo sàn" loading="lazy" />
+          <div class="gallery-info">
+            <h4 data-vi="Mặt bằng rải giáo sàn" data-en="Slab Scaffolding Layout">Mặt bằng rải giáo sàn</h4>
+            <p data-vi="Bố trí giáo sàn Ringlock với giằng X, giằng Y, giằng phụ và đoạn cách biên tự động." data-en="Ringlock slab scaffolding with X/Y bracing, supplementary bracing and auto edge offset.">Bố trí giáo sàn Ringlock với giằng X, giằng Y, giằng phụ và đoạn cách biên tự động.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PRICING SECTION
+       ============================================ -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>💰</span>
+          <span data-vi="Báo giá" data-en="Pricing">Báo giá</span>
+        </span>
+        <h2 class="section-title" data-vi="Đầu tư thông minh cho năng suất" data-en="Smart Investment for Productivity">Đầu tư thông minh cho năng suất</h2>
+        <p class="section-subtitle" data-vi="Tiết kiệm hàng giờ mỗi ngày với chi phí hợp lý. Dùng thử miễn phí 7 ngày đầy đủ tính năng." data-en="Save hours every day at a reasonable cost. Free 7-day trial with full features.">Tiết kiệm hàng giờ mỗi ngày với chi phí hợp lý. Dùng thử miễn phí 7 ngày đầy đủ tính năng.</p>
+      </div>
+
+      <div class="pricing-grid stagger-children reveal">
+        <!-- Trial -->
+        <div class="pricing-card" id="pricing-trial">
+          <div class="pricing-icon">🎁</div>
+          <h3 class="pricing-name" data-vi="Dùng thử" data-en="Free Trial">Dùng thử</h3>
+          <p class="pricing-desc" data-vi="Trải nghiệm đầy đủ tính năng" data-en="Full feature experience">Trải nghiệm đầy đủ tính năng</p>
+
+          <div class="pricing-price">
+            <span class="pricing-amount" data-vi="Miễn phí" data-en="Free">Miễn phí</span>
+            <div class="pricing-period" data-vi="7 ngày" data-en="7 days">7 ngày</div>
+          </div>
+
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <span data-vi="Đầy đủ 31+ lệnh" data-en="Full 31+ commands">Đầy đủ 31+ lệnh</span></li>
+            <li><span class="check">✓</span> <span data-vi="Xuất Excel" data-en="Excel export">Xuất Excel</span></li>
+            <li><span class="check">✓</span> <span data-vi="AutoCAD 2021-2025+" data-en="AutoCAD 2021-2025+">AutoCAD 2021-2025+</span></li>
+            <li><span class="cross">✗</span> <span data-vi="Hỗ trợ kỹ thuật" data-en="Technical support">Hỗ trợ kỹ thuật</span></li>
+            <li><span class="cross">✗</span> <span data-vi="Cập nhật tự động" data-en="Auto updates">Cập nhật tự động</span></li>
+          </ul>
+
+          <a href="#" class="btn btn-secondary btn-pricing" data-vi="Bắt đầu dùng thử" data-en="Start Trial">Bắt đầu dùng thử</a>
+        </div>
+
+        <!-- Monthly -->
+        <div class="pricing-card popular" id="pricing-monthly">
+          <div class="pricing-popular-badge" data-vi="⭐ Phổ biến nhất" data-en="⭐ Most Popular">⭐ Phổ biến nhất</div>
+          <div class="pricing-icon">🚀</div>
+          <h3 class="pricing-name" data-vi="1 Tháng" data-en="Monthly">1 Tháng</h3>
+          <p class="pricing-desc" data-vi="Phù hợp dự án ngắn hạn" data-en="For short-term projects">Phù hợp dự án ngắn hạn</p>
+
+          <div class="pricing-price">
+            <span class="pricing-amount">200K</span>
+            <div class="pricing-period" data-vi="VNĐ / tháng" data-en="VND / month">VNĐ / tháng</div>
+          </div>
+
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <span data-vi="Đầy đủ 31+ lệnh" data-en="Full 31+ commands">Đầy đủ 31+ lệnh</span></li>
+            <li><span class="check">✓</span> <span data-vi="Xuất Excel" data-en="Excel export">Xuất Excel</span></li>
+            <li><span class="check">✓</span> <span data-vi="AutoCAD 2021-2025+" data-en="AutoCAD 2021-2025+">AutoCAD 2021-2025+</span></li>
+            <li><span class="check">✓</span> <span data-vi="Hỗ trợ kỹ thuật Zalo" data-en="Zalo tech support">Hỗ trợ kỹ thuật Zalo</span></li>
+            <li><span class="check">✓</span> <span data-vi="Cập nhật tự động" data-en="Auto updates">Cập nhật tự động</span></li>
+          </ul>
+
+          <a href="#" class="btn btn-primary btn-pricing" data-vi="Mua ngay" data-en="Buy Now">Mua ngay</a>
+        </div>
+
+        <!-- Yearly -->
+        <div class="pricing-card" id="pricing-yearly">
+          <div class="pricing-icon">💎</div>
+          <h3 class="pricing-name" data-vi="1 Năm" data-en="Yearly">1 Năm</h3>
+          <p class="pricing-desc" data-vi="Tiết kiệm 67% — Đầu tư dài hạn" data-en="Save 67% — Long-term investment">Tiết kiệm 67% — Đầu tư dài hạn</p>
+
+          <div class="pricing-price">
+            <span class="pricing-amount">800K</span>
+            <div class="pricing-period" data-vi="VNĐ / năm" data-en="VND / year">VNĐ / năm</div>
+          </div>
+
+          <ul class="pricing-features">
+            <li><span class="check">✓</span> <span data-vi="Đầy đủ 31+ lệnh" data-en="Full 31+ commands">Đầy đủ 31+ lệnh</span></li>
+            <li><span class="check">✓</span> <span data-vi="Xuất Excel" data-en="Excel export">Xuất Excel</span></li>
+            <li><span class="check">✓</span> <span data-vi="AutoCAD 2021-2025+" data-en="AutoCAD 2021-2025+">AutoCAD 2021-2025+</span></li>
+            <li><span class="check">✓</span> <span data-vi="Hỗ trợ kỹ thuật ưu tiên" data-en="Priority tech support">Hỗ trợ kỹ thuật ưu tiên</span></li>
+            <li><span class="check">✓</span> <span data-vi="Cập nhật tự động + tính năng mới" data-en="Auto updates + new features">Cập nhật tự động + tính năng mới</span></li>
+          </ul>
+
+          <a href="#" class="btn btn-secondary btn-pricing" data-vi="Mua ngay" data-en="Buy Now">Mua ngay</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       COMPATIBILITY SECTION
+       ============================================ -->
+  <section class="compatibility section" id="compatibility">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>🖥️</span>
+          <span data-vi="Tương thích" data-en="Compatibility">Tương thích</span>
+        </span>
+        <h2 class="section-title" data-vi="Hỗ trợ đa phiên bản AutoCAD" data-en="Multi-version AutoCAD Support">Hỗ trợ đa phiên bản AutoCAD</h2>
+        <p class="section-subtitle" data-vi="Plugin được build song song cho .NET 4.8 và .NET 8.0, đảm bảo tương thích từ AutoCAD 2021 đến 2025+." data-en="Plugin dual-built for .NET 4.8 and .NET 8.0, ensuring compatibility from AutoCAD 2021 to 2025+.">Plugin được build song song cho .NET 4.8 và .NET 8.0, đảm bảo tương thích từ AutoCAD 2021 đến 2025+.</p>
+      </div>
+
+      <div class="compat-grid reveal">
+        <!-- AutoCAD Versions -->
+        <div class="compat-card">
+          <h3>
+            <span>🎯</span>
+            <span data-vi="Phiên bản AutoCAD" data-en="AutoCAD Versions">Phiên bản AutoCAD</span>
+          </h3>
+          <div class="compat-list">
+            <div class="compat-item">
+              <span class="compat-check">✓</span>
+              <span class="compat-label">AutoCAD 2021</span>
+              <span class="compat-tag">.NET 4.8</span>
+            </div>
+            <div class="compat-item">
+              <span class="compat-check">✓</span>
+              <span class="compat-label">AutoCAD 2022</span>
+              <span class="compat-tag">.NET 4.8</span>
+            </div>
+            <div class="compat-item">
+              <span class="compat-check">✓</span>
+              <span class="compat-label">AutoCAD 2023</span>
+              <span class="compat-tag">.NET 4.8</span>
+            </div>
+            <div class="compat-item">
+              <span class="compat-check">✓</span>
+              <span class="compat-label">AutoCAD 2024</span>
+              <span class="compat-tag">.NET 4.8</span>
+            </div>
+            <div class="compat-item">
+              <span class="compat-check">✓</span>
+              <span class="compat-label">AutoCAD 2025+</span>
+              <span class="compat-tag" style="background: rgba(16, 185, 129, 0.1); color: var(--accent-emerald);">.NET 8.0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Installation -->
+        <div class="compat-card">
+          <h3>
+            <span>📥</span>
+            <span data-vi="Cài đặt nhanh" data-en="Quick Installation">Cài đặt nhanh</span>
+          </h3>
+          <div class="install-steps">
+            <div class="install-step">
+              <div class="install-step-num">1</div>
+              <div class="install-step-text" data-vi="Tải file Setup (.exe) từ GitHub Releases" data-en="Download Setup (.exe) from GitHub Releases">Tải file Setup (.exe) từ GitHub Releases</div>
+            </div>
+            <div class="install-step">
+              <div class="install-step-num">2</div>
+              <div class="install-step-text" data-vi="Chạy file cài đặt, chọn thư mục (mặc định tự động)" data-en="Run installer, select directory (auto by default)">Chạy file cài đặt, chọn thư mục (mặc định tự động)</div>
+            </div>
+            <div class="install-step">
+              <div class="install-step-num">3</div>
+              <div class="install-step-text" data-vi="Mở AutoCAD — Plugin tự động load qua .bundle" data-en="Open AutoCAD — Plugin auto-loads via .bundle">Mở AutoCAD — Plugin tự động load qua .bundle</div>
+            </div>
+            <div class="install-step">
+              <div class="install-step-num">4</div>
+              <div class="install-step-text" data-vi="Gõ lệnh LVD để mở bảng công cụ chính" data-en="Type LVD command to open the main tool palette">Gõ lệnh <strong style="color: var(--accent-cyan); font-family: var(--font-mono);">LVD</strong> để mở bảng công cụ chính</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FAQ SECTION
+       ============================================ -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>❓</span>
+          <span data-vi="Câu hỏi thường gặp" data-en="FAQ">Câu hỏi thường gặp</span>
+        </span>
+        <h2 class="section-title" data-vi="Giải đáp thắc mắc" data-en="Frequently Asked Questions">Giải đáp thắc mắc</h2>
+      </div>
+
+      <div class="faq-list reveal" id="faqList">
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q1">
+            <span data-vi="Plugin có hỗ trợ AutoCAD phiên bản cũ không?" data-en="Does the plugin support older AutoCAD versions?">Plugin có hỗ trợ AutoCAD phiên bản cũ không?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="LVD Plugin hỗ trợ AutoCAD từ phiên bản 2021 trở lên. Phiên bản 2021-2024 sử dụng .NET Framework 4.8, còn từ 2025 trở đi sử dụng .NET 8.0. Plugin được build song song để đảm bảo tương thích." data-en="LVD Plugin supports AutoCAD from version 2021 onwards. Versions 2021-2024 use .NET Framework 4.8, while 2025+ uses .NET 8.0. The plugin is dual-built to ensure compatibility.">LVD Plugin hỗ trợ AutoCAD từ phiên bản 2021 trở lên. Phiên bản 2021-2024 sử dụng .NET Framework 4.8, còn từ 2025 trở đi sử dụng .NET 8.0. Plugin được build song song để đảm bảo tương thích.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q2">
+            <span data-vi="License hoạt động như thế nào?" data-en="How does the license work?">License hoạt động như thế nào?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="License được gắn theo máy tính (theo serial ổ cứng) và có thời hạn sử dụng. Bạn sẽ được cung cấp key kích hoạt sau khi thanh toán. Key chỉ dùng được trên 1 máy duy nhất." data-en="License is tied to your computer (by HDD serial) and has an expiration period. You will receive an activation key after payment. The key works on 1 machine only.">License được gắn theo máy tính (theo serial ổ cứng) và có thời hạn sử dụng. Bạn sẽ được cung cấp key kích hoạt sau khi thanh toán. Key chỉ dùng được trên 1 máy duy nhất.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q3">
+            <span data-vi="Plugin có tự động cập nhật không?" data-en="Does the plugin auto-update?">Plugin có tự động cập nhật không?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="Có! Plugin sẽ tự động kiểm tra phiên bản mới khi khởi động AutoCAD. Nếu có bản cập nhật, bạn sẽ nhận được thông báo và link tải trực tiếp từ GitHub." data-en="Yes! The plugin automatically checks for new versions when AutoCAD starts. If an update is available, you'll receive a notification with a download link directly from GitHub.">Có! Plugin sẽ tự động kiểm tra phiên bản mới khi khởi động AutoCAD. Nếu có bản cập nhật, bạn sẽ nhận được thông báo và link tải trực tiếp từ GitHub.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q4">
+            <span data-vi="Hỗ trợ những hệ giáo chống nào?" data-en="Which scaffolding systems are supported?">Hỗ trợ những hệ giáo chống nào?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="LVD Plugin hỗ trợ 3 hệ giáo chống phổ biến nhất: Ringlock (giáo đĩa), Nêm (giáo nêm), và H-Frame (giáo khung). Chiều cao giáo được tối ưu tự động dựa trên chiều cao tầng thực tế." data-en="LVD Plugin supports 3 most popular scaffolding systems: Ringlock, Wedge, and H-Frame. Scaffolding height is automatically optimized based on actual floor height.">LVD Plugin hỗ trợ 3 hệ giáo chống phổ biến nhất: Ringlock (giáo đĩa), Nêm (giáo nêm), và H-Frame (giáo khung). Chiều cao giáo được tối ưu tự động dựa trên chiều cao tầng thực tế.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q5">
+            <span data-vi="Tôi có thể đổi máy sử dụng được không?" data-en="Can I transfer my license to another machine?">Tôi có thể đổi máy sử dụng được không?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="License gắn theo máy nên nếu bạn đổi máy, hãy liên hệ trực tiếp qua Zalo để được cấp key mới miễn phí (trong thời hạn license còn hiệu lực)." data-en="Since the license is machine-bound, if you change your computer, please contact us directly via Zalo to receive a new key for free (while your license is still valid).">License gắn theo máy nên nếu bạn đổi máy, hãy liên hệ trực tiếp qua Zalo để được cấp key mới miễn phí (trong thời hạn license còn hiệu lực).</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" id="faq-q6">
+            <span data-vi="Thanh toán bằng cách nào?" data-en="How do I make payment?">Thanh toán bằng cách nào?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-content" data-vi="Bạn có thể thanh toán qua chuyển khoản ngân hàng (ACB). Sau khi thanh toán, gửi thông tin máy qua Zalo để nhận key kích hoạt trong vòng vài phút." data-en="You can pay via bank transfer (ACB). After payment, send your machine info via Zalo to receive your activation key within minutes.">Bạn có thể thanh toán qua chuyển khoản ngân hàng (ACB). Sau khi thanh toán, gửi thông tin máy qua Zalo để nhận key kích hoạt trong vòng vài phút.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CUSTOM SERVICE SECTION
+       ============================================ -->
+  <section class="custom-service section" id="custom-service">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">
+          <span>🛠️</span>
+          <span data-vi="Dịch vụ riêng" data-en="Custom Service">Dịch vụ riêng</span>
+        </span>
+        <h2 class="section-title" data-vi="Viết LSP & Tools theo yêu cầu" data-en="Custom LSP & Tools Development">Viết LSP & Tools theo yêu cầu</h2>
+        <p class="section-subtitle" data-vi="Ngoài plugin có sẵn, chúng tôi nhận viết AutoLISP (LSP), Plugin C#, và các công cụ riêng lẻ theo nhu cầu cụ thể của dự án bạn." data-en="Beyond our existing plugin, we develop custom AutoLISP (LSP), C# Plugins, and specialized tools tailored to your specific project needs.">Ngoài plugin có sẵn, chúng tôi nhận viết AutoLISP (LSP), Plugin C#, và các công cụ riêng lẻ theo nhu cầu cụ thể của dự án bạn.</p>
+      </div>
+
+      <div class="service-grid reveal">
+        <div class="service-card" data-accent="orange">
+          <div class="service-icon">📝</div>
+          <h3 data-vi="Viết AutoLISP (LSP)" data-en="AutoLISP Development">Viết AutoLISP (LSP)</h3>
+          <p data-vi="Tự động hóa các thao tác lặp lại trên AutoCAD bằng LSP. Phù hợp cho các nhiệm vụ đơn giản đến trung bình, triển khai nhanh." data-en="Automate repetitive AutoCAD operations with LSP. Suitable for simple to medium tasks, quick deployment.">Tự động hóa các thao tác lặp lại trên AutoCAD bằng LSP. Phù hợp cho các nhiệm vụ đơn giản đến trung bình, triển khai nhanh.</p>
+          <ul class="service-features">
+            <li data-vi="✓ Tự động vẽ, chỉnh sửa bản vẽ" data-en="✓ Auto drawing & editing">✓ Tự động vẽ, chỉnh sửa bản vẽ</li>
+            <li data-vi="✓ Xử lý text, block, layer hàng loạt" data-en="✓ Batch text, block, layer processing">✓ Xử lý text, block, layer hàng loạt</li>
+            <li data-vi="✓ Tính toán, thống kê tự động" data-en="✓ Auto calculation & statistics">✓ Tính toán, thống kê tự động</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-accent="purple">
+          <div class="service-icon">⚙️</div>
+          <h3 data-vi="Plugin C# cho AutoCAD" data-en="C# AutoCAD Plugin">Plugin C# cho AutoCAD</h3>
+          <p data-vi="Phát triển plugin chuyên sâu bằng C# với giao diện WPF hiện đại. Hỗ trợ xử lý phức tạp, kết nối database, xuất báo cáo." data-en="Advanced C# plugin development with modern WPF interface. Complex processing, database connection, report export.">Phát triển plugin chuyên sâu bằng C# với giao diện WPF hiện đại. Hỗ trợ xử lý phức tạp, kết nối database, xuất báo cáo.</p>
+          <ul class="service-features">
+            <li data-vi="✓ Giao diện WPF/WinForms chuyên nghiệp" data-en="✓ Professional WPF/WinForms UI">✓ Giao diện WPF/WinForms chuyên nghiệp</li>
+            <li data-vi="✓ Xuất Excel, kết nối cơ sở dữ liệu" data-en="✓ Excel export, database integration">✓ Xuất Excel, kết nối cơ sở dữ liệu</li>
+            <li data-vi="✓ Hỗ trợ AutoCAD 2021-2025+" data-en="✓ AutoCAD 2021-2025+ support">✓ Hỗ trợ AutoCAD 2021-2025+</li>
+          </ul>
+        </div>
+
+        <div class="service-card" data-accent="gradient">
+          <div class="service-icon">📀</div>
+          <h3 data-vi="Tools riêng lẻ" data-en="Standalone Tools">Tools riêng lẻ</h3>
+          <p data-vi="Xây dựng công cụ độc lập (Excel macro, phần mềm Windows) phục vụ quy trình làm việc riêng của đội ngũ bạn." data-en="Build standalone tools (Excel macros, Windows apps) serving your team's specific workflows.">Xây dựng công cụ độc lập (Excel macro, phần mềm Windows) phục vụ quy trình làm việc riêng của đội ngũ bạn.</p>
+          <ul class="service-features">
+            <li data-vi="✓ Excel VBA / Macro tự động" data-en="✓ Excel VBA / Macro automation">✓ Excel VBA / Macro tự động</li>
+            <li data-vi="✓ Ứng dụng Windows Forms / WPF" data-en="✓ Windows Forms / WPF apps">✓ Ứng dụng Windows Forms / WPF</li>
+            <li data-vi="✓ Tư vấn giải pháp kỹ thuật" data-en="✓ Technical solution consulting">✓ Tư vấn giải pháp kỹ thuật</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service-cta reveal">
+        <p data-vi="📞 Liên hệ Zalo để trao đổi yêu cầu và báo giá cụ thể:" data-en="📞 Contact via Zalo to discuss requirements and get a quote:">📞 Liên hệ Zalo để trao đổi yêu cầu và báo giá cụ thể:</p>
+        <a href="https://zalo.me/0326823376" target="_blank" class="btn btn-primary">
+          <span>💬</span>
+          <span data-vi="Chat Zalo: 0326.823.376" data-en="Chat Zalo: 0326.823.376">Chat Zalo: 0326.823.376</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CTA SECTION
+       ============================================ -->
+  <section class="cta-section section" id="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2 class="cta-title">
+          <span data-vi="Sẵn sàng tăng tốc" data-en="Ready to">Sẵn sàng tăng tốc</span>
+          <span class="text-gradient" data-vi=" công việc?" data-en=" boost productivity?"> công việc?</span>
+        </h2>
+        <p class="cta-subtitle" data-vi="Tải LVD Plugin và trải nghiệm ngay hôm nay. Dùng thử miễn phí 7 ngày." data-en="Download LVD Plugin and try it today. Free 7-day trial.">Tải LVD Plugin và trải nghiệm ngay hôm nay. Dùng thử miễn phí 7 ngày.</p>
+        <div class="cta-buttons">
+          <a href="https://github.com/LeVanDal/LVD-Plugin-Releases/releases/latest" target="_blank" class="btn btn-primary">
+            <span>⬇</span>
+            <span data-vi="Tải từ GitHub" data-en="Download from GitHub">Tải từ GitHub</span>
+          </a>
+          <a href="#pricing" class="btn btn-secondary">
+            <span>💰</span>
+            <span data-vi="Xem báo giá" data-en="View Pricing">Xem báo giá</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="nav-logo-icon"><img src="images/logo-nav.png" alt="LVD" /></div>
+            <span class="nav-logo-text">LVD AutoCAD Tools</span>
+          </a>
+          <p data-vi="Bộ công cụ hỗ trợ thi công xây dựng chuyên nghiệp trên AutoCAD. Được phát triển bởi kỹ sư Lê Văn Đại." data-en="Professional construction support toolkit for AutoCAD. Developed by engineer Lê Văn Đại.">Bộ công cụ hỗ trợ thi công xây dựng chuyên nghiệp trên AutoCAD. Được phát triển bởi kỹ sư Lê Văn Đại.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-vi="Sản phẩm" data-en="Product">Sản phẩm</h4>
+          <a href="#features" data-vi="Tính năng" data-en="Features">Tính năng</a>
+          <a href="#commands" data-vi="Bảng lệnh" data-en="Commands">Bảng lệnh</a>
+          <a href="#pricing" data-vi="Báo giá" data-en="Pricing">Báo giá</a>
+          <a href="#compatibility" data-vi="Tương thích" data-en="Compatibility">Tương thích</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-vi="Hỗ trợ" data-en="Support">Hỗ trợ</h4>
+          <a href="#faq" data-vi="FAQ" data-en="FAQ">FAQ</a>
+          <a href="#custom-service" data-vi="Dịch vụ riêng" data-en="Custom Service">Dịch vụ riêng</a>
+          <a href="https://github.com/LeVanDal/LVD-Plugin-Releases/releases" target="_blank" data-vi="Changelog" data-en="Changelog">Changelog</a>
+          <a href="#" data-vi="Hướng dẫn sử dụng" data-en="User Guide">Hướng dẫn sử dụng</a>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-vi="Liên hệ" data-en="Contact">Liên hệ</h4>
+          <a href="tel:0326823376" data-vi="📞 0326.823.376" data-en="📞 0326.823.376">📞 0326.823.376</a>
+          <a href="#" data-vi="💬 Zalo: 0326.823.376" data-en="💬 Zalo: 0326.823.376">💬 Zalo: 0326.823.376</a>
+          <a href="https://github.com/LeVanDal" target="_blank">🔗 GitHub</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2024-2026 LVD Plugin. <span data-vi="Bản quyền thuộc Lê Văn Đại." data-en="All rights reserved by Lê Văn Đại.">Bản quyền thuộc Lê Văn Đại.</span></span>
+        <div class="footer-socials">
+          <a href="https://github.com/LeVanDal" target="_blank" class="footer-social" aria-label="GitHub">
+            <span>🔗</span>
+          </a>
+          <a href="tel:0326823376" class="footer-social" aria-label="Phone">
+            <span>📞</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 440" width="400" height="440">
+  <defs>
+    <linearGradient id="hexGradOuter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7B2CBF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#9D4EDD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF7A00;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hexGradInner" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF7A00;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FF9A33;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGradLVD" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF7A00;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FF9A33;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7B2CBF;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="crosshairGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.6" />
+      <stop offset="100%" style="stop-color:#7B2CBF;stop-opacity:0.4" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Hexagon Border -->
+  <polygon points="200,18 362,112 362,288 200,382 38,288 38,112"
+    fill="none" stroke="url(#hexGradOuter)" stroke-width="6" filter="url(#glow)"/>
+
+  <!-- Inner Hexagon Border -->
+  <polygon points="200,38 342,122 342,278 200,362 58,278 58,122"
+    fill="none" stroke="url(#hexGradOuter)" stroke-width="2.5" opacity="0.5"/>
+
+  <!-- Dark Fill -->
+  <polygon points="200,42 338,124 338,276 200,358 62,276 62,124"
+    fill="#0a0a1a" opacity="0.95"/>
+
+  <!-- Crosshair - vertical -->
+  <line x1="200" y1="85" x2="200" y2="130" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.7"/>
+  <line x1="200" y1="280" x2="200" y2="310" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Crosshair - horizontal -->
+  <line x1="100" y1="200" x2="140" y2="200" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.4"/>
+  <line x1="260" y1="200" x2="300" y2="200" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Crosshair center circle -->
+  <circle cx="200" cy="115" r="8" fill="none" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="200" y1="100" x2="200" y2="107" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="200" y1="123" x2="200" y2="130" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="185" y1="115" x2="192" y2="115" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.6"/>
+  <line x1="208" y1="115" x2="215" y2="115" stroke="url(#crosshairGrad)" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- LVD Text -->
+  <g filter="url(#glowStrong)">
+    <!-- L -->
+    <path d="M95,155 L95,265 L145,265 L145,252 L115,252 L115,155 Z"
+      fill="url(#textGradLVD)"/>
+
+    <!-- V -->
+    <path d="M148,155 L183,265 L203,265 L238,155 L218,155 L193,240 L168,155 Z"
+      fill="url(#textGradLVD)"/>
+
+    <!-- D -->
+    <path d="M245,155 L245,265 L290,265 Q325,265 325,210 Q325,155 290,155 Z M265,170 L285,170 Q305,170 305,210 Q305,250 285,250 L265,250 Z"
+      fill="url(#textGradLVD)"/>
+  </g>
+
+  <!-- Underline accent -->
+  <line x1="120" y1="278" x2="280" y2="278" stroke="url(#hexGradOuter)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+
+  <!-- AUTOCAD text -->
+  <text x="200" y="305" text-anchor="middle" font-family="'Inter', Arial, sans-serif"
+    font-size="26" font-weight="600" letter-spacing="6" fill="#e2e8f0">
+    AUTOCAD
+  </text>
+
+  <!-- TOOLS text -->
+  <text x="200" y="335" text-anchor="middle" font-family="'Inter', Arial, sans-serif"
+    font-size="24" font-weight="700" letter-spacing="10" fill="url(#hexGradOuter)">
+    TOOLS
+  </text>
+
+  <!-- Small hexagon icon top-right accent -->
+  <polygon points="330,80 345,88 345,104 330,112 315,104 315,88"
+    fill="none" stroke="#FF7A00" stroke-width="1.5" opacity="0.3"/>
+</svg>
