@@ -461,7 +461,7 @@
             <li><span class="check">✓</span> <span data-vi="Cập nhật tự động" data-en="Auto updates">Cập nhật tự động</span></li>
           </ul>
 
-          <a href="https://zalo.me/0326823376" target="_blank" class="btn btn-primary btn-pricing" data-vi="💬 Mua ngay" data-en="💬 Buy Now">💬 Mua ngay</a>
+          <button onclick="openRegModal('monthly')" class="btn btn-primary btn-pricing" data-vi="💬 Đăng ký mua" data-en="💬 Register">💬 Đăng ký mua</button>
         </div>
 
         <!-- Yearly -->
@@ -483,7 +483,7 @@
             <li><span class="check">✓</span> <span data-vi="Cập nhật tự động + tính năng mới" data-en="Auto updates + new features">Cập nhật tự động + tính năng mới</span></li>
           </ul>
 
-          <a href="https://zalo.me/0326823376" target="_blank" class="btn btn-secondary btn-pricing" data-vi="💬 Mua ngay" data-en="💬 Buy Now">💬 Mua ngay</a>
+          <button onclick="openRegModal('yearly')" class="btn btn-secondary btn-pricing" data-vi="💬 Đăng ký mua" data-en="💬 Register">💬 Đăng ký mua</button>
         </div>
       </div>
     </div>
@@ -781,6 +781,60 @@
       </div>
     </div>
   </footer>
+
+  <!-- ============================================
+       REGISTRATION MODAL
+       ============================================ -->
+  <div class="reg-modal-overlay" id="regModalOverlay" onclick="closeRegModal(event)">
+    <div class="reg-modal" onclick="event.stopPropagation()">
+      <button class="reg-modal-close" onclick="closeRegModal()">&times;</button>
+      
+      <div id="regFormView">
+        <div class="reg-modal-header">
+          <div class="reg-modal-icon">📝</div>
+          <h3 id="regTitle" data-vi="Đăng ký mua License" data-en="Register License">Đăng ký mua License</h3>
+          <p id="regPlanDesc" data-vi="Gói 1 Tháng — 200K VNĐ" data-en="Monthly Plan — 200K VND">Gói 1 Tháng — 200K VNĐ</p>
+        </div>
+
+        <form id="regForm" onsubmit="submitRegistration(event)">
+          <div class="reg-field">
+            <label data-vi="Họ và tên *" data-en="Full Name *">Họ và tên *</label>
+            <input type="text" id="regName" required placeholder="Nguyễn Văn A" />
+          </div>
+          <div class="reg-field">
+            <label data-vi="Số điện thoại (Zalo) *" data-en="Phone (Zalo) *">Số điện thoại (Zalo) *</label>
+            <input type="tel" id="regPhone" required placeholder="0901234567" />
+          </div>
+          <div class="reg-field">
+            <label data-vi="Ghi chú" data-en="Note">Ghi chú</label>
+            <input type="text" id="regNote" placeholder="Công ty, dự án..." />
+          </div>
+          <input type="hidden" id="regPlan" value="monthly" />
+
+          <button type="submit" class="btn btn-primary reg-submit" id="regSubmitBtn">
+            <span data-vi="✅ Xác nhận đăng ký" data-en="✅ Confirm Registration">✅ Xác nhận đăng ký</span>
+          </button>
+        </form>
+      </div>
+
+      <div id="regSuccessView" style="display:none; text-align:center; padding: 20px 0;">
+        <div style="font-size:3rem; margin-bottom:16px;">🎉</div>
+        <h3 data-vi="Đăng ký thành công!" data-en="Registration Successful!" style="color:#10b981; margin-bottom:12px;">Đăng ký thành công!</h3>
+        <p data-vi="Vui lòng chuyển khoản theo thông tin bên dưới và liên hệ Zalo để nhận license." data-en="Please transfer payment and contact Zalo to receive your license." style="color:#94a3b8; margin-bottom:24px;">Vui lòng chuyển khoản theo thông tin bên dưới và liên hệ Zalo để nhận license.</p>
+        
+        <div class="reg-payment-info">
+          <p style="font-weight:700; margin-bottom:8px;" data-vi="🏦 Thông tin chuyển khoản:" data-en="🏦 Payment Info:">🏦 Thông tin chuyển khoản:</p>
+          <p id="regPaymentAmount" style="font-size:1.3rem; font-weight:800; color:#FF7A00;">200,000 VNĐ</p>
+          <p style="color:#94a3b8; font-size:0.85rem; margin-top:4px;" data-vi="Nội dung: LVD + SĐT của bạn" data-en="Content: LVD + Your Phone">Nội dung: LVD + SĐT của bạn</p>
+        </div>
+
+        <a href="https://zalo.me/0326823376" target="_blank" class="btn btn-primary" style="margin-top:20px; width:100%; justify-content:center;">
+          <span>💬</span>
+          <span data-vi="Liên hệ Zalo: 0326.823.376" data-en="Contact Zalo: 0326.823.376">Liên hệ Zalo: 0326.823.376</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

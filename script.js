@@ -349,6 +349,91 @@ function updateActiveNav() {
 window.addEventListener('scroll', updateActiveNav);
 
 // ============================================
+// REGISTRATION MODAL
+// ============================================
+const API_BASE = 'https://lvd-license-servers.sepbilu.workers.dev';
+
+function openRegModal(plan) {
+  const overlay = document.getElementById('regModalOverlay');
+  const title = document.getElementById('regTitle');
+  const desc = document.getElementById('regPlanDesc');
+  const planInput = document.getElementById('regPlan');
+
+  // Reset to form view
+  document.getElementById('regFormView').style.display = 'block';
+  document.getElementById('regSuccessView').style.display = 'none';
+  document.getElementById('regForm').reset();
+
+  planInput.value = plan;
+
+  if (plan === 'monthly') {
+    desc.setAttribute('data-vi', 'Gói 1 Tháng — 200K VNĐ');
+    desc.setAttribute('data-en', 'Monthly Plan — 200K VND');
+    desc.textContent = currentLang === 'vi' ? 'Gói 1 Tháng — 200K VNĐ' : 'Monthly Plan — 200K VND';
+  } else {
+    desc.setAttribute('data-vi', 'Gói 1 Năm — 800K VNĐ (Tiết kiệm 67%)');
+    desc.setAttribute('data-en', 'Yearly Plan — 800K VND (Save 67%)');
+    desc.textContent = currentLang === 'vi' ? 'Gói 1 Năm — 800K VNĐ (Tiết kiệm 67%)' : 'Yearly Plan — 800K VND (Save 67%)';
+  }
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeRegModal(event) {
+  if (event && event.target !== event.currentTarget) return;
+  const overlay = document.getElementById('regModalOverlay');
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+async function submitRegistration(event) {
+  event.preventDefault();
+
+  const btn = document.getElementById('regSubmitBtn');
+  const name = document.getElementById('regName').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const note = document.getElementById('regNote').value.trim();
+  const plan = document.getElementById('regPlan').value;
+
+  btn.disabled = true;
+  btn.innerHTML = '<span>⏳ Đang gửi...</span>';
+
+  try {
+    const res = await fetch(`${API_BASE}/api/register`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ customerName: name, customerPhone: phone, plan, note })
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      // Show success view
+      document.getElementById('regFormView').style.display = 'none';
+      document.getElementById('regSuccessView').style.display = 'block';
+
+      // Update payment amount
+      const amount = plan === 'yearly' ? '800,000 VNĐ' : '200,000 VNĐ';
+      document.getElementById('regPaymentAmount').textContent = amount;
+    } else {
+      alert(data.error || 'Có lỗi xảy ra. Vui lòng thử lại.');
+    }
+  } catch (err) {
+    alert('Không thể kết nối server. Vui lòng liên hệ Zalo: 0326.823.376');
+  }
+
+  btn.disabled = false;
+  const btnText = currentLang === 'vi' ? '✅ Xác nhận đăng ký' : '✅ Confirm Registration';
+  btn.innerHTML = `<span>${btnText}</span>`;
+}
+
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeRegModal();
+});
+
+// ============================================
 // INITIALIZATION
 // ============================================
 document.addEventListener('DOMContentLoaded', () => {
