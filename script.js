@@ -416,10 +416,11 @@ async function submitRegistration(event) {
       // Update payment amount
       const amount = plan === 'yearly' ? 800000 : 200000;
       const amountText = plan === 'yearly' ? '800,000 VNĐ' : '200,000 VNĐ';
+      const planDuration = plan === 'yearly' ? '12T' : '1T';
       document.getElementById('regPaymentAmount').textContent = amountText;
 
-      // Set transfer content
-      const transferContent = `LVD ${phone}`;
+      // Set transfer content: LVD + SĐT + số tháng
+      const transferContent = `LVD ${phone} ${planDuration}`;
       document.getElementById('regTransferContent').textContent = transferContent;
 
       // Generate VietQR code
