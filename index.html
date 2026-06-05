@@ -820,12 +820,33 @@
       <div id="regSuccessView" style="display:none; text-align:center; padding: 20px 0;">
         <div style="font-size:3rem; margin-bottom:16px;">🎉</div>
         <h3 data-vi="Đăng ký thành công!" data-en="Registration Successful!" style="color:#10b981; margin-bottom:12px;">Đăng ký thành công!</h3>
-        <p data-vi="Vui lòng chuyển khoản theo thông tin bên dưới và liên hệ Zalo để nhận license." data-en="Please transfer payment and contact Zalo to receive your license." style="color:#94a3b8; margin-bottom:24px;">Vui lòng chuyển khoản theo thông tin bên dưới và liên hệ Zalo để nhận license.</p>
+        <p data-vi="Vui lòng chuyển khoản theo thông tin bên dưới. License sẽ được cấp tự động sau khi xác nhận thanh toán." data-en="Please transfer payment below. License will be issued automatically after payment confirmation." style="color:#94a3b8; margin-bottom:24px;">Vui lòng chuyển khoản theo thông tin bên dưới. License sẽ được cấp tự động sau khi xác nhận thanh toán.</p>
         
+        <!-- VietQR Code -->
+        <div style="margin-bottom:20px;">
+          <img id="regQRCode" src="" alt="QR Chuyển khoản" style="width:220px; height:220px; border-radius:12px; border:2px solid rgba(255,122,0,0.3);" />
+        </div>
+
         <div class="reg-payment-info">
-          <p style="font-weight:700; margin-bottom:8px;" data-vi="🏦 Thông tin chuyển khoản:" data-en="🏦 Payment Info:">🏦 Thông tin chuyển khoản:</p>
-          <p id="regPaymentAmount" style="font-size:1.3rem; font-weight:800; color:#FF7A00;">200,000 VNĐ</p>
-          <p style="color:#94a3b8; font-size:0.85rem; margin-top:4px;" data-vi="Nội dung: LVD + SĐT của bạn" data-en="Content: LVD + Your Phone">Nội dung: LVD + SĐT của bạn</p>
+          <p style="font-weight:700; margin-bottom:12px; font-size:1rem;" data-vi="🏦 Ngân hàng ACB" data-en="🏦 ACB Bank">🏦 Ngân hàng ACB</p>
+          <table style="width:100%; text-align:left; font-size:0.9rem;">
+            <tr>
+              <td style="color:#94a3b8; padding:4px 0;" data-vi="Số TK:" data-en="Account:">Số TK:</td>
+              <td style="color:#e2e8f0; font-weight:700; font-family:monospace; font-size:1.1rem;">30890807</td>
+            </tr>
+            <tr>
+              <td style="color:#94a3b8; padding:4px 0;" data-vi="Chủ TK:" data-en="Name:">Chủ TK:</td>
+              <td style="color:#e2e8f0; font-weight:600;">LÊ VĂN ĐẠI</td>
+            </tr>
+            <tr>
+              <td style="color:#94a3b8; padding:4px 0;" data-vi="Số tiền:" data-en="Amount:">Số tiền:</td>
+              <td id="regPaymentAmount" style="color:#FF7A00; font-weight:800; font-size:1.1rem;">200,000 VNĐ</td>
+            </tr>
+            <tr>
+              <td style="color:#94a3b8; padding:4px 0;" data-vi="Nội dung CK:" data-en="Content:">Nội dung CK:</td>
+              <td id="regTransferContent" style="color:#10b981; font-weight:700;">LVD 0901234567</td>
+            </tr>
+          </table>
         </div>
 
         <a href="https://zalo.me/0326823376" target="_blank" class="btn btn-primary" style="margin-top:20px; width:100%; justify-content:center;">

@@ -414,8 +414,17 @@ async function submitRegistration(event) {
       document.getElementById('regSuccessView').style.display = 'block';
 
       // Update payment amount
-      const amount = plan === 'yearly' ? '800,000 VNĐ' : '200,000 VNĐ';
-      document.getElementById('regPaymentAmount').textContent = amount;
+      const amount = plan === 'yearly' ? 800000 : 200000;
+      const amountText = plan === 'yearly' ? '800,000 VNĐ' : '200,000 VNĐ';
+      document.getElementById('regPaymentAmount').textContent = amountText;
+
+      // Set transfer content
+      const transferContent = `LVD ${phone}`;
+      document.getElementById('regTransferContent').textContent = transferContent;
+
+      // Generate VietQR code
+      const qrUrl = `https://img.vietqr.io/image/ACB-30890807-compact2.png?amount=${amount}&addInfo=${encodeURIComponent(transferContent)}&accountName=${encodeURIComponent('LE VAN DAI')}`;
+      document.getElementById('regQRCode').src = qrUrl;
     } else {
       alert(data.error || 'Có lỗi xảy ra. Vui lòng thử lại.');
     }
