@@ -68,6 +68,12 @@ const commandsData = [
 ];
 
 // ============================================
+// HWID FROM URL (plugin sends ?hwid=XXX)
+// ============================================
+const urlParams = new URLSearchParams(window.location.search);
+const hwidFromUrl = urlParams.get('hwid') || '';
+
+// ============================================
 // LANGUAGE SYSTEM
 // ============================================
 let currentLang = 'vi';
@@ -416,7 +422,7 @@ async function submitRegistration(event) {
     const res = await fetch(`${API_BASE}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customerName: name, customerPhone: phone, customerEmail: email, plan, note })
+      body: JSON.stringify({ customerName: name, customerPhone: phone, customerEmail: email, hwid: hwidFromUrl, plan, note })
     });
 
     const data = await res.json();
