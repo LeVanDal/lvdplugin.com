@@ -393,6 +393,7 @@ async function submitRegistration(event) {
   const btn = document.getElementById('regSubmitBtn');
   const name = document.getElementById('regName').value.trim();
   const phone = document.getElementById('regPhone').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
   const note = document.getElementById('regNote').value.trim();
   const plan = document.getElementById('regPlan').value;
 
@@ -403,7 +404,7 @@ async function submitRegistration(event) {
     const res = await fetch(`${API_BASE}/api/register`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customerName: name, customerPhone: phone, plan, note })
+      body: JSON.stringify({ customerName: name, customerPhone: phone, customerEmail: email, plan, note })
     });
 
     const data = await res.json();
