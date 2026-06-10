@@ -810,6 +810,18 @@ ul, ol {
   --icon-border: rgba(245, 158, 11, 0.2);
 }
 
+.feature-card[data-accent="teal"] {
+  --card-accent: linear-gradient(135deg, #14b8a6, #06b6d4);
+  --icon-bg: rgba(20, 184, 166, 0.1);
+  --icon-border: rgba(20, 184, 166, 0.2);
+}
+
+.feature-card[data-accent="pink"] {
+  --card-accent: linear-gradient(135deg, #d946ef, #ec4899);
+  --icon-bg: rgba(217, 70, 239, 0.1);
+  --icon-border: rgba(217, 70, 239, 0.2);
+}
+
 /* ============================================
    COMMAND REFERENCE SECTION
    ============================================ */
