@@ -12,7 +12,8 @@ const commandsData = [
   { cmd: 'DIM_GACH_LVD', vi: 'Auto dimension gạch', en: 'Auto tile dimensioning', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
   { cmd: 'TK_GACH_LVD', vi: 'Thống kê số lượng gạch', en: 'Tile quantity statistics/BOM', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
   { cmd: 'TIMGACH_LVD', vi: 'Tìm kiếm / xác định vị trí gạch', en: 'Search/locate tiles', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
-  { cmd: 'C2L_LVD', vi: 'Chuyển đổi layout gạch 2 lớp', en: 'Convert 2-layer tile layout', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
+  { cmd: 'C2L_LVD', vi: 'Chuyển đổi Circle thành Polyline', en: 'Convert Circle to Polyline', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
+  { cmd: 'PHOI_GACH_LVD', vi: 'Tự động phối viên cắt → viên nguyên (tiết kiệm gạch)', en: 'Auto tile matching — combine cuts into full tiles', group: 'tiling', groupVi: 'Ốp Lát', groupEn: 'Tiling', color: '#3b82f6' },
 
   // QS
   { cmd: 'QS_PLINE_LVD', vi: 'Đo khối lượng theo polyline', en: 'Measure polyline-based quantities', group: 'qs', groupVi: 'Bóc tách KL', groupEn: 'QS', color: '#10b981' },
@@ -53,6 +54,17 @@ const commandsData = [
 
   // Thép tăng cường (Reinforcement)
   { cmd: 'LVD_Vetheptangcuong', vi: 'Rải thép tăng cường hàng loạt', en: 'Batch reinforcement rebar distribution', group: 'reinforcement', groupVi: 'Thép TC', groupEn: 'Reinforcement', color: '#f59e0b' },
+
+  // Nội suy cao độ (Elevation Interpolation)
+  { cmd: 'LVD_ELEV_SLOPE', vi: 'Nội suy cao độ hoàn thiện — chế độ Slope (độ dốc %)', en: 'Elevation interpolation — Slope mode (%)', group: 'elevation', groupVi: 'Nội suy cao độ', groupEn: 'Elevation', color: '#14b8a6' },
+  { cmd: 'LVD_ELEV_2PT', vi: 'Nội suy cao độ hoàn thiện — chế độ 2 điểm', en: 'Elevation interpolation — 2-point mode', group: 'elevation', groupVi: 'Nội suy cao độ', groupEn: 'Elevation', color: '#14b8a6' },
+  { cmd: 'LVD_ELEV_LINE', vi: 'Nội suy cao độ hoàn thiện — từ Line có sẵn', en: 'Elevation interpolation — from existing Line', group: 'elevation', groupVi: 'Nội suy cao độ', groupEn: 'Elevation', color: '#14b8a6' },
+
+  // Xây Tô (Masonry & Plaster)
+  { cmd: 'XAYTO_LVD', vi: 'Vẽ tường + lớp tô + dim + annotation tự động', en: 'Auto wall drawing + plaster + dim + annotation', group: 'masonry', groupVi: 'Xây Tô', groupEn: 'Masonry', color: '#d946ef' },
+  { cmd: 'CUAXT_LVD', vi: 'Đục lỗ cửa trên tường đã vẽ (cửa đi / cửa sổ)', en: 'Cut door/window openings in drawn walls', group: 'masonry', groupVi: 'Xây Tô', groupEn: 'Masonry', color: '#d946ef' },
+  { cmd: 'DIMXT_LVD', vi: 'Auto-dim kích thước tường xây tô', en: 'Auto-dimension masonry walls', group: 'masonry', groupVi: 'Xây Tô', groupEn: 'Masonry', color: '#d946ef' },
+  { cmd: 'DEL_XAYTO', vi: 'Xóa tất cả entity xây tô', en: 'Delete all masonry entities', group: 'masonry', groupVi: 'Xây Tô', groupEn: 'Masonry', color: '#d946ef' },
 ];
 
 // ============================================
